@@ -9,7 +9,18 @@ public class TesteController : ControllerBase
     {
         return Ok(new
         {
-            mensagem = "API funcionando, Sucesso no retorno"
+            mensagem = "API funcionando, Sucesso no retorno",
+            status = "OK"
+        });
+    }
+
+    [HttpGet("erro")]
+    public IActionResult Erro()
+    {
+        return BadRequest(new
+        {
+            mensagem = "Ocorreu um erro na requisição."
         });
     }
 }
+
